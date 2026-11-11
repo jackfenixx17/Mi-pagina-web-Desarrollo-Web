@@ -1,3 +1,10 @@
+<?php
+// Configuración de fecha y datos del servidor local
+date_default_timezone_set('America/Merida');
+$fecha_servidor = date("Y-m-d H:i:s");
+$version_php = phpversion();
+$software_servidor = $_SERVER['SERVER_SOFTWARE'];
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,11 +24,11 @@
     <!-- Menú de navegación -->
     <nav>
         <ul>
-            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.php">Inicio</a></li>
             <li><a href="evolucion.html">Evolución de la Web</a></li>
             <li><a href="galeria.html">Galería de Imágenes</a></li>
             <li><a href="tablas.html">Proyectos y Tablas</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
         </ul>
     </nav>
 
@@ -50,6 +57,22 @@
                 <em>Java, C, C++, Python y PHP</em>, además de conceptos
                 de diseño de software y bases de datos con MySQL.
             </p>
+
+            <hr>
+
+            <!-- Datos generados desde el servidor con PHP -->
+            <section>
+                <h2>Estado del Servidor de Aplicaciones</h2>
+                <p>Información generada en tiempo real por el servidor local:</p>
+                <?php
+                echo "<ul>";
+                echo "<li><strong>Estado de PHP:</strong> ¡PHP está funcionando correctamente!</li>";
+                echo "<li><strong>Fecha y hora actual del servidor:</strong> " . $fecha_servidor . "</li>";
+                echo "<li><strong>Versión de PHP:</strong> " . $version_php . "</li>";
+                echo "<li><strong>Servidor HTTP:</strong> " . $software_servidor . "</li>";
+                echo "</ul>";
+                ?>
+            </section>
 
             <hr>
 
