@@ -11,7 +11,7 @@
     <!-- Encabezado del sitio -->
     <header>
         <h1>Mi página web</h1>
-        <p>Desarrollo de Aplicaciones Web - ADA 4</p>
+        <p>Desarrollo de Aplicaciones Web - ADA 5</p>
     </header>
 
     <!-- Menú de navegación -->
@@ -21,13 +21,20 @@
             <li><a href="evolucion.html">Evolución de la Web</a></li>
             <li><a href="galeria.html">Galería de Imágenes</a></li>
             <li><a href="tablas.html">Proyectos y Tablas</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.php">Tienda</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
         </ul>
     </nav>
 
     <!-- Contenido principal -->
     <main>
         <article>
+            
+            <p class="alerta-exito">
+                Nota de ejecución: Los módulos dinámicos de Tienda (carrito.php) y Contacto (contacto.php) utilizan sesiones en 
+                PHP y base de datos, por lo que requieren ejecutarse desde un servidor local como XAMPP.
+            </p>
+
             <!-- Presentación personal -->
             <h2>Sobre mí</h2>
             
@@ -51,6 +58,7 @@
                 de diseño de software y bases de datos con MySQL.
             </p>
 
+
             <hr>
 
             <!-- Recursos de audio y video -->
@@ -67,7 +75,7 @@
                 
                 <!-- Video reproducido desde las carpetas del proyecto -->
                 <h3>Video: La Historia de la Web</h3>
-                <video width="400" controls>
+                <video class="video-presentacion" controls>
                     <source src="videos/historia_web.mp4" type="video/mp4">
                     Tu navegador no soporta la reproducción de video.
                 </video>
@@ -82,23 +90,23 @@
                 
                 <div>
                     <h3>1. Validación de Inicio (index.html)</h3>
-                    <img src="imagenes/validacionindex.png" alt="Captura de validación W3C sin errores para index.html" width="500">
+                    <img src="imagenes/validacionindex.png" alt="Captura de validación W3C sin errores para index.html" class="img-validacion">
                 </div>
                 <div>
                     <h3>2. Validación de Evolución (evolucion.html)</h3>
-                    <img src="imagenes/validacionevolucion.png" alt="Captura de validación W3C sin errores para evolucion.html" width="500">
+                    <img src="imagenes/validacionevolucion.png" alt="Captura de validación W3C sin errores para evolucion.html" class="img-validacion">
                 </div>
                 <div>
                     <h3>3. Validación de Galería (galeria.html)</h3>
-                    <img src="imagenes/validaciongaleria.png" alt="Captura de validación W3C sin errores para galeria.html" width="500">
+                    <img src="imagenes/validaciongaleria.png" alt="Captura de validación W3C sin errores para galeria.html" class="img-validacion">
                 </div>
                 <div>
                     <h3>4. Validación de Tablas (tablas.html)</h3>
-                    <img src="imagenes/validaciontablas.png" alt="Captura de validación W3C sin errores para tablas.html" width="500">
+                    <img src="imagenes/validaciontablas.png" alt="Captura de validación W3C sin errores para tablas.html" class="img-validacion">
                 </div>
                 <div>
                     <h3>5. Validación de Contacto (contacto.html)</h3>
-                    <img src="imagenes/validacioncontacto.png" alt="Captura de validación W3C sin errores para contacto.html" width="500">
+                    <img src="imagenes/validacioncontacto.png" alt="Captura de validación W3C sin errores para contacto.html" class="img-validacion">
                 </div>
             </section>
             
@@ -107,13 +115,13 @@
             <!-- Información de la asignatura -->
             <aside>
                 <h3>Datos de la asignatura</h3>
-                <img src="imagenes/UADY.png" alt="Logotipo de la Universidad Autónoma de Yucatán" width="200">
+                <img src="imagenes/UADY.png" alt="Logotipo de la Universidad Autónoma de Yucatán" class="img-logo-uady">
                 <ul>
                     <li><strong>Institución:</strong> Universidad Autónoma de Yucatán (UADY)</li>
                     <li><strong>Facultad:</strong> Facultad de Matemáticas (FMAT)</li>
                     <li><strong>Modalidad:</strong> Unidad Académica de Educación Virtual (UAEV)</li>
                     <li><strong>Profesor:</strong> Dr. Michel García García</li>
-                    <li><strong>Actividad:</strong> ADA 4. Servidor Web local y desarrollo del lado del servidor</li>
+                    <li><strong>Actividad:</strong> ADA 5. Carrito de compras con manejo de sesiones</li>
                 </ul>
             </aside>
         </article>
