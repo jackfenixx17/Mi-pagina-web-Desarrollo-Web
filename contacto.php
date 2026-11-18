@@ -1,7 +1,11 @@
 <?php
+// Iniciar la sesión
+session_start();
+
 // Incluir archivo de conexión a la base de datos
 require_once 'conexion.php';
 
+$usuario_sesion = $_SESSION["usuario"] ?? "";
 $mensaje_estado = "";
 
 // Procesar los datos cuando el formulario se envía por POST
@@ -46,16 +50,17 @@ $resultado_mensajes = $conexion->query("SELECT id, nombre, perfil, motivo, inter
     <!-- Encabezado del sitio -->
     <header>
         <h1>Mi página web</h1>
-        <p>Desarrollo de Aplicaciones Web - ADA 4</p>
+        <p>Desarrollo de Aplicaciones Web - ADA 5</p>
     </header>
 
     <!-- Menú de navegación -->
     <nav>
         <ul>
-            <li><a href="index.php">Inicio</a></li>
+            <li><a href="index.html">Inicio</a></li>
             <li><a href="evolucion.html">Evolución de la Web</a></li>
             <li><a href="galeria.html">Galería de Imágenes</a></li>
             <li><a href="tablas.html">Proyectos y Tablas</a></li>
+            <li><a href="carrito.php">Tienda</a></li>
             <li><a href="contacto.php">Contacto</a></li>
         </ul>
     </nav>
@@ -64,6 +69,13 @@ $resultado_mensajes = $conexion->query("SELECT id, nombre, perfil, motivo, inter
     <main>
         <article>
             <h2>Contacto</h2>
+
+            <?php if ($usuario_sesion !== ""): ?>
+                <p class="alerta-exito">
+                    Usuario activo en la sesión: <strong><?php echo htmlspecialchars($usuario_sesion, ENT_QUOTES, "UTF-8"); ?></strong>
+                </p>
+            <?php endif; ?>
+
             <section>
                 <h3>Ponte en contacto</h3>
                 <p>Completa el siguiente formulario para enviarme un mensaje relacionado con mis proyectos académicos.</p>
@@ -71,7 +83,7 @@ $resultado_mensajes = $conexion->query("SELECT id, nombre, perfil, motivo, inter
                 <!-- Mensaje de confirmación del servidor -->
                 <?php if ($mensaje_estado !== ""): ?>
                     <p class="alerta-exito">
-                        <?php echo htmlspecialchars($mensaje_estado); ?>
+                        <?php echo htmlspecialchars($mensaje_estado, ENT_QUOTES, "UTF-8"); ?>
                     </p>
                 <?php endif; ?>
 
@@ -165,10 +177,10 @@ $resultado_mensajes = $conexion->query("SELECT id, nombre, perfil, motivo, inter
                                 <?php while ($fila = $resultado_mensajes->fetch_assoc()): ?>
                                     <tr>
                                         <td><?php echo $fila["id"]; ?></td>
-                                        <td><?php echo htmlspecialchars($fila["nombre"]); ?></td>
-                                        <td><?php echo htmlspecialchars($fila["perfil"]); ?></td>
-                                        <td><?php echo htmlspecialchars($fila["motivo"]); ?></td>
-                                        <td><?php echo htmlspecialchars($fila["intereses"]); ?></td>
+                                        <td><?php echo htmlspecialchars($fila["nombre"], ENT_QUOTES, "UTF-8"); ?></td>
+                                        <td><?php echo htmlspecialchars($fila["perfil"], ENT_QUOTES, "UTF-8"); ?></td>
+                                        <td><?php echo htmlspecialchars($fila["motivo"], ENT_QUOTES, "UTF-8"); ?></td>
+                                        <td><?php echo htmlspecialchars($fila["intereses"], ENT_QUOTES, "UTF-8"); ?></td>
                                         <td><?php echo $fila["fecha_envio"]; ?></td>
                                     </tr>
                                 <?php endwhile; ?>
