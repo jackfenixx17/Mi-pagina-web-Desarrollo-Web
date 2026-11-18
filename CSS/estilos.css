@@ -146,6 +146,27 @@ audio {
   margin-bottom: 1rem;
 }
 
+/* Clases de tamaño para imágenes y multimedia */
+.img-logo-uady {
+  width: 130px;
+}
+
+.img-logo-www {
+  width: 200px;
+}
+
+.img-validacion {
+  width: 380px;
+}
+
+.img-ilustracion {
+  width: 450px;
+}
+
+.video-presentacion {
+  width: 380px;
+}
+
 /* Estilos para la tabla de datos */
 .tabla-contenedor {
   overflow-x: auto;
@@ -276,6 +297,26 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: var(--dorado-secundario);
   color: var(--azul-primario);
+}
+
+/* Estilos para la tienda y el carrito de compras */
+input[type="number"] {
+  width: 75px;
+  padding: 8px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.img-catalogo {
+  width: 90px;
+  margin: 0 auto;
+}
+
+.img-carrito {
+  width: 70px;
+  margin: 0 auto;
 }
 
 /* Diseño para tablets */
